@@ -87,6 +87,11 @@ Client.prototype = {
     var options = this._filterOptions(query, ['coordinates']);
     this._request('table',  this._joinParams(this._formatLocs(query.coordinates), this._formatOptions(options)), callback);
   },
+
+  trip: function(query, callback) {
+    var options = this._filterOptions(query, ['coordinates']);
+    this._request('trip',  this._joinParams(this._formatLocs(query.coordinates), this._formatOptions(options)), callback);
+  },
 };
 
 if (typeof module !== 'undefined') module.exports = Client;
